@@ -28,27 +28,33 @@ function FilmList() {
     const genres = films.map((f) => f.genre);
 
     return (
-        <section>
-            <h2>Lista Film</h2>
+        <section className="container">
 
             {/* Select per filtrare */}
-            <select
-                value={activeType}
-                onChange={(e) => setActiveType(e.target.value)}
-            >
-                <option value="">Tutti i generi</option>
-                {genres.map((genre, i) => (
-                    <option key={i} value={genre}>
-                        {genre}
-                    </option>
-                ))}
-            </select>
+            <div className="box">
+                <select
+                    className="film-select"
+                    value={activeType}
+                    onChange={(e) => setActiveType(e.target.value)}
+                >
+                    <option value="">Tutti i generi</option>
+                    {genres.map((genre, i) => (
+                        <option key={i} value={genre}>
+                            {genre}
+                        </option>
+                    ))}
+                </select>
+            </div>
 
             {/* Lista film */}
-            <ul>
+            <ul className="film-list">
                 {results.map((movie, index) => (
-                    <li key={index}>
-                        {movie.title} - <span>{movie.genre}</span>
+                    <li key={index} className="film-card">
+                        <div className="poster"></div>
+                        <div className="info">
+                            <h3>{movie.title}</h3>  
+                            <span>{movie.genre}</span>
+                        </div>
                     </li>
                 ))}
             </ul>

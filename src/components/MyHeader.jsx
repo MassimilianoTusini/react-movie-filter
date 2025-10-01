@@ -4,7 +4,7 @@ export default function MyHeader() {
     <>
         <header>
 
-            <h1>I NOSTRI FILM</h1>
+            <h1 className="film-title">NETFIGURE</h1>
 
         </header>
     </>
